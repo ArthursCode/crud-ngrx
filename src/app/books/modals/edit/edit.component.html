@@ -1,0 +1,30 @@
+<div mat-dialog-title>Edit Book</div>
+<div mat-dialog-content>
+  <hr>
+  <input type="text" placeholder="book name" [(ngModel)]="model.name">
+  <hr>
+  <kendo-dropdownlist [data]="genreItems$ | async"
+                      (selectionChange)="selectionChangeGenre($event)"
+                      [textField]="'name'"
+                      [valueField]="'id'"
+                      [defaultItem]="placeHolderGenre"
+  >
+  </kendo-dropdownlist>
+  <hr>
+  <kendo-dropdownlist [data]="authorItems$ | async"
+                      (selectionChange)="selectionChangeAuthor($event)"
+                      [textField]="'name'"
+                      [valueField]="'id'"
+                      [defaultItem]="placeHolderAuthor"
+                      [disabled]="disabled"
+  >
+  </kendo-dropdownlist>
+  <hr>
+  <input type="text" placeholder="release date" [(ngModel)]="model.date">
+  <hr>
+</div>
+<div mat-dialog-actions class="modal-actions">
+  <button (click)="close()">Cancel</button>
+  <button (click)="editBook()">Edit</button>
+</div>
+

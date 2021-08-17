@@ -1,0 +1,11 @@
+<div mat-dialog-title>Add Genre</div>
+<div mat-dialog-content>
+  <hr>
+  <input type="text" placeholder="genre name" [(ngModel)]="model.name">
+  <hr>
+</div>
+<div mat-dialog-actions class="modal-actions">
+  <button (click)="close()">Cancel</button>
+  <button (click)="addGenre()">Add</button>
+</div>
+

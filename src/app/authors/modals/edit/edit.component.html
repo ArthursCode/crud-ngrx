@@ -1,0 +1,18 @@
+<div mat-dialog-title>Edit Author</div>
+<div mat-dialog-content >
+  <hr>
+  <input type="text" placeholder="author name" [(ngModel)]="model.name">
+  <hr>
+  <kendo-dropdownlist [data]="genreItems$ | async"
+                      (selectionChange)="selectionChange($event)"
+                      [textField]="'name'"
+                      [valueField]="'id'"
+                      [defaultItem]="placeHolder"
+  >
+  </kendo-dropdownlist>
+  <hr>
+</div>
+<div mat-dialog-actions class="modal-actions">
+  <button (click)="close()">Cancel</button>
+  <button (click)="editAuthor()">Edit</button>
+</div>

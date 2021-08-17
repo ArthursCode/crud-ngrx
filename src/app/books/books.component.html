@@ -1,0 +1,39 @@
+<br/>
+<button kendoButton (click)="onAddNewBook()">Add Book</button>
+<br/>
+<br/>
+
+<kendo-grid
+  [kendoGridBinding]="(bookItems$ | async)!"
+  [pageSize]="20"
+  [resizable]="true"
+  (edit)="onEditBook($event)"
+  (remove)="onRemoveBook($event)"
+>
+
+  <kendo-grid-column field="name" title="Book Name" [width]="220">
+
+  </kendo-grid-column>
+  <kendo-grid-column field="author" title="Author" [width]="220">
+
+  </kendo-grid-column>
+  <kendo-grid-column field="genre" title="Genre" [width]="220">
+
+  </kendo-grid-column>
+  <kendo-grid-column field="date" title="Date" [width]="220">
+
+  </kendo-grid-column>
+  <kendo-grid-command-column title="Actions" [width]="220">
+    <ng-template kendoGridCellTemplate>
+      <button kendoGridRemoveCommand>
+        <span class="k-icon k-i-delete"></span>
+      </button>
+
+      <button kendoGridEditCommand>
+        <span class="k-icon k-i-pencil"></span>
+      </button>
+
+    </ng-template>
+  </kendo-grid-command-column>
+</kendo-grid>
+
